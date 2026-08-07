@@ -1,9 +1,20 @@
 # BMI Calculator CLI Application
 
+weight = float(input("Enter your weight in kilograms: "))
+height = float(input("Enter your height in meters: "))
+
+ # introducing class
+class BMICalculator:
+   print("=== BMI Calculator CLI ===")
+    
+   # Validate input
+   if weight <= 0 or height <= 0:
+    print("Weight and height must be greater than 0.")
+
+
 # Function to calculate BMI
 def calculate_bmi(weight, height):
     return weight / (height ** 2)
-
 
 # Function to specify BMI category
 def get_bmi_category(bmi):
@@ -16,35 +27,19 @@ def get_bmi_category(bmi):
     else:
         return "Obese"
 
+# Calculate BMI
+bmi = calculate_bmi(weight, height)
+    
+# Get BMI category
+category = get_bmi_category(bmi)
+    
+# Display result
+print(f"\nYour BMI is: {bmi:.2f}")
+print(f"Category: {category}")    
 
 # Main function
 def main():
-    print("=== BMI Calculator CLI ===")
-
-    try:
-        # Get user input
-        weight = float(input("Enter your weight in kilograms: "))
-        height = float(input("Enter your height in meters: "))
-
-        # Validate input
-        if weight <= 0 or height <= 0:
-            print("Weight and height must be greater than 0.")
-            return
-
-        # Calculate BMI
-        bmi = calculate_bmi(weight, height)
-
-        # Get BMI category
-        category = get_bmi_category(bmi)
-
-        # Display result
-        print(f"\nYour BMI is: {bmi:.2f}")
-        print(f"Category: {category}")
-
-    except ValueError:
-        print("Input is not valid, Please enter numeric values only.")
-
 
 # Run the program
-if __name__ == "__main__":
-    main()
+ if __name__ == "__main__":
+     main()
