@@ -17,7 +17,7 @@ class Student:
             f"Address: {self.address}, Student ID: {self.student_id}"
         )
 
-#Class to Manage the add student, sorting students by age & displaying the students 
+# Class to Manage the add student, sorting students by age & displaying the students 
 class StudentManager:
     def __init__(self):
         # students is a list that stores Student objects
@@ -39,7 +39,17 @@ class StudentManager:
 
     # Method to collect student data from user input
     def collect_students(self) -> None:
+        my_list = [1, 3, 5, 7, 9, 11]
+        my_list[2:4] = [-3, -9, -11, -13]
+        print(my_list)
+        
         print("Enter student data." + "\n" + "[ Leave full name blank or Press enter to stop ]")
+
+        # It find the index of 2nd position to the position of 4th position of the specified value in a list and replaces it with new values in middle.
+        #  
+
+        
+
         while len(self.students) < 70:
             full_name = input("Full name: ")
             if not full_name:
