@@ -2,84 +2,86 @@ import random
 import string
 
 
-def get_random_word():
-    
-    words = [
-        "python", "variable", "function", "iterator", "notebook",
-        "pipeline", "dataset", "computer", "research", "analytics"
-    ]
-    return random.choice(words)
+class WordGuessGame:
+    def __init__(self, max_lives=6):
+        self.words = [
+            "python", "variable", "function", "iterator", "notebook",
+            "pipeline", "dataset", "computer", "research", "analytics"
+        ]
+        self.max_lives = max_lives
+        self.secret_word = self.get_random_word()
+        self.blanks = self.make_blanks()
+        self.lives = max_lives
+        self.used_letters = set()
 
-def make_blanks(word):
-    
-    return ["_" for _ in word]
+    def get_random_word(self):
+        return random.choice(self.words)
 
-def prompt_for_letter(used_letters):
+    def make_blanks(self):
+        return ["_" for _ in self.secret_word]
 
-    while True:
-        guess = input("Guess a letter: ").strip().lower()
-        if len(guess) != 1 or guess not in string.ascii_lowercase:
-            print(" → Please enter a single A-Z letter.")
-            continue
-        if guess in used_letters:
-            print(" → You already tried that letter.")
-            continue
-        return guess
+    def prompt_for_letter(self):
+        while True:
+            guess = input("Guess a letter: ").strip().lower()
 
-def reveal_letters(word, blanks, letter):
+            if len(guess) != 1 or guess not in string.ascii_lowercase:
+                print("→ Please enter a single A-Z letter.")
+                continue
 
-    found_any = False
-    for i, ch in enumerate(word):
-        if ch == letter and blanks[i] == "_":
-            blanks[i] = letter
-            found_any = True
-    return found_any
+            if guess in self.used_letters:
+                print("→ You already tried that letter.")
+                continue
 
-def all_blanks_filled(blanks):
-   
-    return "_" not in blanks
+            return guess
 
-def play_game(max_lives=6):
-    
-    secret = get_random_word()
-    blanks = make_blanks(secret)
-    lives = max_lives
-    used = set()
+    def reveal_letters(self, letter):
+        found_any = False
 
-    print("\nWelcome to Word Guessing!")
-    print(f"The word has {len(secret)} letters.")
-    print(" ".join(blanks))
+        for i, ch in enumerate(self.secret_word):
+            if ch == letter and self.blanks[i] == "_":
+                self.blanks[i] = letter
+                found_any = True
 
-    while True:
-        # Ask the user to guess a letter
-        guess = prompt_for_letter(used)
-        used.add(guess)
+        return found_any
 
-        # Is the guessed letter in the word?
-        if reveal_letters(secret, blanks, guess):
-            print("\n Well done, Nice job! You found a letter.")
-            print(" ".join(blanks))
-            # Are all blanks filled?
-            if all_blanks_filled(blanks):
-                print("\n Congratulation! You guessed the word!")
-                print(f"Word: {secret}")
-                print("GAME OVER")
-                break
-        else:
-            # Lose a life
-            lives -= 1
-            print(f"\nNope. You lose a life. Lives left: {lives}")
-            print(" ".join(blanks))
+    def all_blanks_filled(self):
+        return "_" not in self.blanks
 
-            # Have they run out of lives?
-            if lives <= 0:
-                print("\n Out of lives & Sad story!")
-                print(f"The word was: {secret}")
-                print("GAME OVER")
-                break
+    def play(self):
+        print("\nWelcome to Word Guessing!")
+        print(f"The word has {len(self.secret_word)} letters.")
+        print(" ".join(self.blanks))
 
-        # (loop continues to ask for another letter)
+        while True:
+            guess = self.prompt_for_letter()
+            self.used_letters.add(guess)
+
+            if self.reveal_letters(guess):
+                print("\nWell done! You found a letter.")
+                print(" ".join(self.blanks))
+
+                if self.all_blanks_filled():
+                    print("\nCongratulations! You guessed the word!")
+                    print(f"Word: {self.secret_word}")
+                    print("GAME OVER")
+                    break
+
+            else:
+                self.lives -= 1
+                print(f"\nNope. You lose a life. Lives left: {self.lives}")
+                print(" ".join(self.blanks))
+
+                if self.lives <= 0:
+                    print("\nOut of lives! Sad story!")
+                    print(f"The word was: {self.secret_word}")
+                    print("GAME OVER")
+                    break
+
+
+def main():
+    game = WordGuessGame()  # Object creation
+    game.play()
 
 
 if __name__ == "__main__":
-    play_game()
+    main()
