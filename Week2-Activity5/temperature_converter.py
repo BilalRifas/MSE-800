@@ -1,3 +1,4 @@
+# Temperature Converter Program
 class TemperatureConverter:
     def __init__(self, user_input):
         self.user_input = user_input.strip()
@@ -20,10 +21,12 @@ class TemperatureConverter:
         except ValueError:
             return False
 
+    # Perform the conversion based on the prefix
     def convert(self):
         prefix = self.user_input[0]
         value = float(self.user_input[1:])
 
+        # Perform conversion based on the prefix
         if prefix == 'F':
             celsius = (value - 32) * 5 / 9
             return f"{self.user_input} degrees Fahrenheit is converted to {celsius:.2f} degrees Celsius"
@@ -38,6 +41,7 @@ def main():
 
     converter = TemperatureConverter(user_input)
 
+    # Check if the input is valid and perform conversion
     if converter.is_valid():
         print(converter.convert())
     else:
