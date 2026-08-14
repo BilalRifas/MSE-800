@@ -3,13 +3,6 @@ import pandas as pd
 import numpy as np
 
 def main():
-    # Read the sample.txt file and print its contents
-    data = open("sample.txt")
-    lines = data.readlines()
-    for line in lines:
-        print(line[0:-1])  # Print each line without the newline character
-    #data. Close()
-    
     # fetch dataset 
     iris = fetch_ucirepo(id=53) 
     
