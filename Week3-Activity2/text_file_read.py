@@ -2,7 +2,7 @@ def main():
     src = "junk.txt"
 
     # Read file and count lines
-    with open(src, "r", encoding="utf-8") as f:
+    with open(src, "r") as f:
         lines = f.read().splitlines()
     total_lines = len(lines)
     print(f"Total lines: {total_lines}")
