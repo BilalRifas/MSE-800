@@ -26,7 +26,7 @@ Subjects Entity - Subject_name,
 
 2. Write the type of relationship between the entities and describe it.
  
-   1 student is enrolled in 1 Enrollment = Student 1 : 1 Enrollment
-   1 Student is enrolled in Many Lectures = Student 1 : M Lectures
-   1 Lecturer lectures 1 or Many Subjects = Lecturer 1 : M Subjects
-   1 Lecturer lectures 1 or Many Lecture = Lecturer 1 : M Lectures
+   1 student is enrolled in 1 Enrollment = Student 1 to 1 Enrollment
+   1 Student is enrolled in Many Lectures = Student 1 to M Lectures
+   1 Lecturer lectures 1 or Many Subjects = Lecturer 1 to M Subjects
+   1 Lecturer lectures 1 or Many Lecture = Lecturer 1 to M Lectures
