@@ -1,0 +1,28 @@
+Week 3 - Activity 3: Describe ER
+--------------------------------
+
+Answers
+-------
+A) Describe a scenario in one or two paragraphs in short the below ER and answer the following question 
+based on your understanding and your own words and answer below quetions:
+
+The ER Diagram shows the entities available in a university.
+The Entities available in the university are Student, Enrollment, Lecture, 
+Lecturer, Subjects. 1 student enrolled in for 1 enrollment (Ex: July or November intake ).
+1 student, 1 Student will be enrolled in Many Lectures. 
+
+Also there will be 1 or Many lecturers lectures 1 or Many Subjects and lectures 1 or Many Lectures.
+
+
+B)
+
+1. Add more one/ two attributes for any of the entities?
+
+Student Entity - Contact_number, S_Address
+
+2. Write the type of relationship between the entities and describe it.
+ 
+   1 student is enrolled in 1 Enrollment
+   1 Student is enrolled in Many Lectures
+   1 Lecturer lectures 1 or Many Subjects
+   1 Lecturer lectures 1 or Many Lecture
