@@ -8,7 +8,7 @@ based on your understanding and your own words and answer below quetions:
 
 The ER Diagram shows the entities available in a university.
 The Entities available in the university are Student, Enrollment, Lecture, 
-Lecturer, Subjects. 1 student enrolled in for 1 enrollment (Ex: July or November intake ).
+Lecturer, Subjects. 1 student enrolled in for 1 enrollment (Ex: July or November intake).
 1 student, 1 Student will be enrolled in Many Lectures. 
 
 Also there will be 1 or Many lecturers lectures 1 or Many Subjects and lectures 1 or Many Lectures.
