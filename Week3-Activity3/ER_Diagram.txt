@@ -18,7 +18,11 @@ B)
 
 1. Add more one/ two attributes for any of the entities?
 
-Student Entity - Contact_number, S_Address
+Student Entity - Contact_number, 
+                 S_Address
+
+Subjects Entity - Subject_name,
+                  Subject_duration                 
 
 2. Write the type of relationship between the entities and describe it.
  
