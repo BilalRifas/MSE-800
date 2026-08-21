@@ -1,21 +1,3 @@
-"""Relational schema (DDL) and schema management.
-
-The tables below are the relational mapping of the ER diagram
-(``er_diagram.tex``). Foreign keys materialise the three relationships:
-
-* ``exchange_transaction.customer_id``          -> *Makes*
-* ``exchange_transaction.base_currency`` and
-  ``exchange_transaction.quote_currency``        -> *Involves*
-* ``exchange_rate.base_currency`` and
-  ``exchange_rate.quote_currency``               -> *Quotes*
-
-``SchemaManager.ensure`` creates any missing tables (non-destructive), while
-``reset`` drops and recreates everything (used to re-seed a clean database).
-
-The transaction table is named ``exchange_transaction`` rather than
-``transaction`` because ``transaction`` is a reserved SQL keyword.
-"""
-
 from __future__ import annotations
 
 import psycopg

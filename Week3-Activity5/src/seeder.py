@@ -1,14 +1,3 @@
-"""Sample data and database seeding.
-
-The sample data covers the four entities in the brief (customers, currencies,
-exchange rates and transactions):
-
-* 5 currencies,
-* 4 customers,
-* 10 exchange rates (five pairs, each quoted in both directions), and
-* 5 transactions, several made by the same customer — this exercises the
-  one-to-many relationship between ``customer`` and ``exchange_transaction``.
-"""
 
 from __future__ import annotations
 

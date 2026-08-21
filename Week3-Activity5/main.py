@@ -1,11 +1,3 @@
-"""Entry point for the MSE800 Week 3 Money Exchange project.
-
-Usage:
-    python main.py              start the interactive Money Exchange menu
-    python main.py --setup      drop, recreate and seed the database, then exit
-    python main.py --report     print the two report queries and exit
-"""
-
 from __future__ import annotations
 
 import argparse

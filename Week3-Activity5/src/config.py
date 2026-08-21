@@ -1,10 +1,3 @@
-"""Application configuration.
-
-The PostgreSQL connection string is read from the ``DATABASE_URL`` environment
-variable. If a ``.env`` file is present in the project root it is loaded first
-(using ``python-dotenv``), which keeps credentials out of the source tree.
-"""
-
 from __future__ import annotations
 
 import os

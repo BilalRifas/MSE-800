@@ -1,9 +1,3 @@
-"""Interactive command-line interface.
-
-A menu-driven CLI that exposes the customer and exchange operations together
-with the report queries and a database reset.
-"""
-
 from __future__ import annotations
 
 from datetime import date

@@ -1,10 +1,3 @@
-"""Database connection management.
-
-Wraps a single ``psycopg`` connection string and exposes a connection context
-manager. The context manager commits on success and rolls back on error, which
-makes the whole ``schema -> seed -> query`` flow atomic in ``main.py``.
-"""
-
 from __future__ import annotations
 
 from contextlib import contextmanager

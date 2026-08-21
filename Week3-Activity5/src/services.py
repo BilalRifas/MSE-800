@@ -1,14 +1,3 @@
-"""Application services.
-
-Service objects coordinate repositories and translate database errors into
-friendly, user-facing messages. The CLI (:mod:`cli`) depends on these rather
-than talking to repositories directly.
-
-``ExchangeService.record_exchange`` is the core business operation: it looks up
-the latest exchange rate for a currency pair and records a transaction using
-that rate.
-"""
-
 from __future__ import annotations
 
 from datetime import date
