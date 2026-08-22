@@ -1,4 +1,4 @@
-The Descrition for Activity Diagram - Money Exchange
+The Description for Activity Diagram - Money Exchange
 
 - The process begins when the customer registers an account.
 - The system creates the customer record and checks whether the customer already exists.
