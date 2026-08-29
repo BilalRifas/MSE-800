@@ -27,6 +27,7 @@ Key2 = ['u', 'b', 'o', 'x', 'e', 'a']
 Value2 = [200, 30, 10, 88, 55, 920]
 
 
+# Create dictionaries from the provided keys and values
 dict1_odd = {k: v for k, v in zip(Key1, Value1)
              if v % 2 == 1}
 dict2_odd = {k: v for k, v in zip(Key2, Value2)
