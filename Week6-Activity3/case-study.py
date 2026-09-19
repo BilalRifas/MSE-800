@@ -15,7 +15,7 @@ def login_required(func):
 @login_required
 def view_salary(salary):
     print(f"Salary - ${salary} per month")
-
+Z
 @login_required
 def view_personal_details():
    print("Personal Details:")
